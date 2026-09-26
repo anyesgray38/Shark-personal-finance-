@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0d0f0e" />
+  <title>Shark Personal Finance</title>
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+<body>
+  <main class="shell">
+    <header>
+      <p class="eyebrow">SHARK PERSONAL FINANCE</p>
+      <h1>Know what your money owes <em>before</em> you spend it.</h1>
+      <p class="lede">Every monthly bill becomes a daily funding target.</p>
+    </header>
+
+    <section class="metrics" aria-label="Funding pace">
+      <article><span>Monthly bills</span><strong id="monthly">$0.00</strong></article>
+      <article><span>Biweekly reserve</span><strong id="biweekly">$0.00</strong></article>
+      <article><span>Weekly reserve</span><strong id="weekly">$0.00</strong></article>
+      <article class="primary"><span>Reserve today</span><strong id="daily">$0.00</strong></article>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <div><p class="eyebrow">OBLIGATIONS</p><h2>Monthly bills</h2></div>
+        <p id="bill-count">0 bills</p>
+      </div>
+
+      <form id="bill-form">
+        <label>Bill name<input id="bill-name" maxlength="60" placeholder="Rent" required /></label>
+        <label>Monthly amount<input id="bill-amount" type="number" min="0.01" step="0.01" placeholder="1000.00" required /></label>
+        <label>Due day<input id="bill-due" type="number" min="1" max="31" placeholder="1" /></label>
+        <button type="submit">Add bill</button>
+      </form>
+
+      <div id="empty" class="empty">Add your first bill to calculate your funding pace.</div>
+      <div id="bill-list" class="bill-list"></div>
+    </section>
+
+    <section class="explain">
+      <p class="eyebrow">HOW IT WORKS</p>
+      <p>Your weekly target is calculated from the full annual obligation—not by pretending every month has exactly four weeks. That keeps the reserve accurate across the year.</p>
+    </section>
+  </main>
+  <script type="module" src="/src/app.ts"></script>
+</body>
+</html>
